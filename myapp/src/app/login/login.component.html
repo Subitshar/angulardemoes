@@ -1,0 +1,46 @@
+<div class="container m-2 border justify-center" style="width: 400px">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm" id="form">
+    <div class="row">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          id="email"
+          class="form-control"
+          name="email"
+          ngModel
+          required
+          #email="ngModel"
+        />
+        <span class="small" name="message" *ngIf="!email.valid && email.touched"
+          >Please enter a valid email</span
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          name="password"
+          ngModel
+          required
+          password
+          #password="ngModel"
+        />
+        <span
+          class="small"
+          name="message"
+          *ngif="!password.valid && password.touched"
+          >Please enter a valid password</span
+        >
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-primary m-2" id="add">Submit</button>
+      <span name="message" *ngIf="f.valid"> Successfully Loged-in</span>
+    </div>
+  </form>
+</div>
